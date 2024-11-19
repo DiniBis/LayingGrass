@@ -11,7 +11,6 @@ private:
     int bonus_exchange = 1;
     int bonus_stone = 1;
     int bonus_robbery = 1;
-    int socre;
 
 public:
     Player(int num_player, std::string name, std::string color);
