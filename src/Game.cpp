@@ -23,8 +23,6 @@ Game::Game() : players(), plateau(players.getNumberPlayers()), tiles(players.get
         SetConsoleTextAttribute(hConsole, 7);
         tiles.show5tile();
         SetConsoleTextAttribute(hConsole, 7);
-
-
         std::cout << "Que voulez vous faire? " << std::endl;
         std::cout << "1. Placer une tuile" << std::endl;
         std::cout << "2. Tourner une tuile" << std::endl;
@@ -85,7 +83,6 @@ Game::Game() : players(), plateau(players.getNumberPlayers()), tiles(players.get
 void Game::displayBoard() {
     std::vector<std::string> couleurs = { "Bleu", "Vert", "Rouge", "Jaune", "Rose", "Orange", "Violet", "Ciel", "Pomme" };
     std::vector<int> color = { 1,2,4,6,13,14,5,11,10 };
-
 
     std::cout << "Board: " << std::endl;
     std::cout << "    ";
@@ -170,7 +167,6 @@ void Game::placeTile() {
         std::cout << "Case occupée choisi une autre case !" << std::endl;
         placeTile();
     }
-
 }
 
 bool Game::checkTile(int x, int y) {
