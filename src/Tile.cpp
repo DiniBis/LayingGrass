@@ -79,7 +79,6 @@ void Tile::set5tile() {
     }
 }
 
-// Afficher les 5 prochaines tiles
 void Tile::show5tile() {
     int max_row = 0;
 
@@ -113,16 +112,17 @@ void Tile::show5tile() {
 void Tile::showTile() {
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     std::cout << "\nTile actuelle :\n\n";
-
     for (const auto& row : current_tile) {
         for (int value : row) {
             SetConsoleTextAttribute(hConsole, value == 1 ? 255 : 0);
             std::cout << (value == 1 ? "1" : "0");
+            SetConsoleTextAttribute(hConsole, 15);
         }
         std::cout << "\n";
     }
     SetConsoleTextAttribute(hConsole, 15);
 }
+
 
 int Tile::getIndice() const {
     return indice;
