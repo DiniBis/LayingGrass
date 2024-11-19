@@ -5,7 +5,6 @@
 #include <cstdlib>
 #include <iostream>
 
-
 using namespace std;
 
 bool check_tile(int x, int y);
@@ -83,9 +82,6 @@ Game::Game() : players(), plateau(players.getNumberPlayers()), tiles(players.get
     std::cin.get();
     finally();
 }
-
-
-
 void Game::displayBoard() {
     std::vector<std::string> couleurs = { "Bleu", "Vert", "Rouge", "Jaune", "Rose", "Orange", "Violet", "Ciel", "Pomme" };
     std::vector<int> color = { 1,2,4,6,13,14,5,11,10 };
@@ -128,7 +124,6 @@ void Game::displayBoard() {
         std::cout << std::endl;
     }
 }
-
 
 void Game::placePlayer() {
     for (int i = 0; i < players.getNumberPlayers(); i++) {
@@ -312,7 +307,6 @@ bool Game::checkEmpty(int x, int y) {
         return false;
     }
 }
-
 
 void Game::nextPlayer() {
     if (currentPlayer == players.getNumberPlayers()) {
@@ -540,7 +534,7 @@ void Game::finally() {
         std::cout << "Vainqueur " << player_max[0] << std::endl;
     }
     std::cout << "Meilleur score : " << score_max << std::endl;
-};
+}
 
 int Game::calculScore(int x, int y, int player) {
     if (plateau.getBoard()[x][y].getPlayer() != player) {
@@ -552,7 +546,7 @@ int Game::calculScore(int x, int y, int player) {
         int c = calculScore(x + 1, y + 1, player);
         return min(min(a, b), c) + 1;;
     }
-};
+}
 
 void Game::crown(int length, int height)
 {
@@ -578,5 +572,3 @@ void Game::crown(int length, int height)
         cout << "\n";
     }
 }
-
-
